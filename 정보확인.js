@@ -1,12 +1,12 @@
 $(document).ready(function() {
     $.ajax({        
         type: "GET",
-        url: "http://soylatte.kr:3000/userdataa",
+        url: "http://soylatte.kr:8989/data",
             success: function(data)     {
-          var testjson = eval(data);
-            for(var i=0;i < testjson.length;i++)
+          var json = eval(data);
+            for(var i=0;i < json.length;i++)
             {
-              document.getElementById("table").innerHTML += "<tr><td>"+testjson[i].name+"</td><td>"+testjson[i].kakaotalk+"</td><td>"+testjson[i].email+"</td><td>"+testjson[i].Phonenum+"</td><td>"+testjson[i].Nowscore+"</td><td>"+testjson[i].Wantscore+"</td><td>"+testjson[i].battletag+"</td></tr>"
+              document.getElementById("table").innerHTML += "<tr><td>"+json[i].name+"</td><td>"+json[i].num+"</td><td>"+json[i].gua+"</td><td>"+json[i].clas+"</td><td>"+json[i].contact+"</td><td>"+json[i].why+"</td><td>"+json[i].self+"</td></tr>"
             }
         },
             error: function(xhr, status, error)     {
